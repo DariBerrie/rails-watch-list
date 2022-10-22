@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @list.name %></h1>
+
+  <ul class="list-group">
+    <% @movies.each do |movie| %>
+      <li class="list-group-item">
+        <p><%= movie.title %></p>
+        <p><%= movie.overview %></p>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
