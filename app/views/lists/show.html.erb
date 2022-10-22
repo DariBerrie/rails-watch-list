@@ -3,9 +3,11 @@
 
   <ul class="list-group">
     <% @movies.each do |movie| %>
-      <li class="list-group-item">
-        <p><%= movie.title %></p>
+      <li class="list-group-item w-50">
+        <%= image_tag movie.poster_url, alt: "#{movie.title} Poster", width: 100 %>
+        <p class="fw-bold mt-2"><%= movie.title %></p>
         <p><%= movie.overview %></p>
+        <p>Rating: <%= movie.rating %></p>
       </li>
     <% end %>
   </ul>
