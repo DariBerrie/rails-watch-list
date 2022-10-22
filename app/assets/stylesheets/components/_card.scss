@@ -1,6 +1,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("https://source.unsplash.com/random/?cinema");
   height: 180px;
   display: flex;
   justify-content: center;
@@ -15,5 +16,44 @@
   a{
     color: white;
     text-decoration: none;
+  }
+}
+
+.card-product {
+  overflow: hidden;
+  height: 200px;
+
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+
+  img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  }
+
+  h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  }
+
+  p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  }
+
+  .card-product-infos {
+  padding: 16px;
+  }
+
+  a {
+    font-size: 14px;
   }
 }

@@ -1,20 +1,21 @@
-<div class="container">
-  <h1><%= @list.name %></h1>
+<div class="container p-3">
+  <h1 class="text-center"><%= @list.name %></h1>
 
-  <ul class="list-group">
     <% @movies.each do |movie| %>
-      <li class="list-group-item w-50">
+      <div class="card-product">
         <%= image_tag movie.poster_url, alt: "#{movie.title} Poster", width: 100 %>
-        <p class="fw-bold mt-2"><%= movie.title %></p>
-        <p><%= movie.overview %></p>
-        <p>Rating: <%= movie.rating %></p>
-        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-        <p><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %></p>
-        <%= link_to "Delete movie",
+        <div class="card-product-infos">
+          <h2><%= movie.title %></h2>
+          <p><%= movie.overview %></p>
+          <p>Rating: <%= movie.rating %></p>
+          <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+            <p><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %></p>
+          <%= link_to "Delete movie",
               bookmark_path(bookmark), class: "text-danger text-decoration-none",
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
               %>
-      </li>
+        </div>
+      </div>
     <% end %>
   </ul>
   <h4 class="mt-3">Add a new movie</h4>

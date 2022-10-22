@@ -1,5 +1,4 @@
 <div class="navbar navbar-light bg-light">
-  <%= image_tag "popcorn.png", alt: "Popcorn Time logo", width:50 %>
-  <%= link_to "Popcorn Time", root_path, class: "navbar-brand" %>
+  <%= link_to (image_tag "popcorn.png", alt: "Popcorn Time logo", width:50), root_path, class: "navbar-brand ms-3" %>
   <%= link_to "Add a new list", new_list_path, class: "me-3" %>
 </div>
