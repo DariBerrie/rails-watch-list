@@ -20,10 +20,14 @@
 
   <div class="list-container d-flex flex-row flex-wrap justify-content-center">
       <% @lists.each do |list| %>
-          <div class="card-category w-25 m-3
-               style=background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
-               url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
-            <%= link_to list.name, list_path(list) %>
+          <div class="card-category w-25 m-3 position-relative"
+               style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+               url('<%= cl_image_path list.photo.key, crop: :fill %>');">
+            <%= link_to list.name, list_path(list) %><br>
+            <p class="position-absolute bottom-0 end-0 pe-2"><%= link_to list_path(list),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash text-white fs-4"></i>
+            <% end %>
           </div>
         <% end %>
   </div>
