@@ -1,3 +1,5 @@
+require 'date'
+
 class ListsController < ApplicationController
   def index
     @lists = List.all
@@ -5,6 +7,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @today = DateTime.now
     @list = List.find(params[:id])
     @movies = @list.movies
     @bookmark = Bookmark.new
