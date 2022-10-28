@@ -1,4 +1,11 @@
-.navbar li:active {
+.navbar {
+
+  li:active {
   font-weight: bold;
+  }
+
+  a {
+    font-family: "Corben", "cursive";
+  }
 
 }

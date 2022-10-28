@@ -1,9 +1,11 @@
-<div class="container">
-  <h1 class="text-center mt-3">Add a new movie category</h1>
+<div class="container d-flex flex-column align-items-center">
+  <div class="form-container mt-5 w-50 shadow bg-light rounded p-3">
+    <h3 class="text-center my-4">Add a new movie category</h1>
 
-  <%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+    <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name, label: false, placeholder: "Enter your movie category" %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>

@@ -13,12 +13,12 @@
         <div class="card-product">
           <%= image_tag movie.poster_url, alt: "#{movie.title} Poster" %>
           <div class="card-product-infos">
-            <h2 class="text-end"><i class="fa-solid fa-star text-warning"></i> <%= movie.rating %></h2>
+            <h2 class="text-end"><i class="fa-solid fa-star text-info"></i> <%= movie.rating %></h2>
             <h2><%= movie.title %></h2>
             <p><%= movie.overview %></p>
             <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
               <p><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %> <i class="fa-solid fa-quote-right"></i></p>
-              <p class="text-end"><%= link_to bookmark_path(bookmark),
+              <p class="delete text-end"><%= link_to bookmark_path(bookmark),
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                 <i class="fa-solid fa-trash text-danger fs-4"></i>
             <% end %>
@@ -38,7 +38,7 @@
           <div class="review-card mt-3 border-bottom w-50">
 
             <% review.rating.times do %>
-              <span class="text-warning"><i class="fa-solid fa-star"></i></span>
+              <span class="text-info"><i class="fa-solid fa-star"></i></span>
             <% end %>
             <span class="fst-italic text-muted">created on <%= review.created_at %></span>
             <p><%= review.comment %></p>

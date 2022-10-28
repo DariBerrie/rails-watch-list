@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   height: 180px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,19 +14,22 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   a{
+    font-family: "Corben", "cursive";
+    font-weight: lighter;
     color: white;
     text-decoration: none;
   }
 }
 
 .card-product {
+  position: relative;
   overflow: hidden;
   width: 600px;
   height: 275px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
+  align-items: start;
   border-radius: 8px;
 
   img {
@@ -35,8 +39,8 @@
   }
 
   h2 {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: lighter;
   margin: 0;
   }
 
@@ -46,6 +50,11 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  }
+  p.delete.text-end {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
   }
 
   .card-product-infos {
